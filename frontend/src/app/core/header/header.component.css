@@ -1,0 +1,10 @@
+ .space{
+    flex: 1 1 auto;
+ } 
+ .home{
+    font-weight: bolder;
+    font-size: xx-large;
+    margin-left:20px;
+ }
+
+
