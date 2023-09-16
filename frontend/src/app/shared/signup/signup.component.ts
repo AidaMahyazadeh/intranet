@@ -14,7 +14,7 @@ import { AuthenticationService } from 'src/app/core/services/auth/authentication
 export class SignupComponent implements OnInit {
   signupForm !:FormGroup;
   type ='password';
-  eyeIcon ='fa-eye-slash'
+  eyeIcon = 'visibility_off';
   isText =false;
   passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,10}$/;
    emailPattern =/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
@@ -41,7 +41,11 @@ export class SignupComponent implements OnInit {
   hideShowPassword(){
     this.isText = !this.isText;
     this.type = this.isText ? 'text' : 'password';
-    this.eyeIcon = this.isText ? 'fa-eye' : 'fa-eye-slash';
+    this.eyeIcon = this.isText ?'visibility': 'visibility_off';
+  }
+
+  onLogin(){
+    this.router.navigate(['login'])
   }
 
   onSignup(){
