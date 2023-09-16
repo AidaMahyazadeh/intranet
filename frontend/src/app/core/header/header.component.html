@@ -1,15 +1,15 @@
-<mat-toolbar color="primary" >
+<mat-toolbar  >
     <a routerLink="/home" class="home">
         CODELAND
     </a>
     <div class="space"></div>
             <a mat-button *ngIf="isLoggedin()" 
-            class="logout" (click)="logout()">Logout</a>
+           color="primary" (click)="logout()">Logout</a>
             <a  mat-button routerLink="/admin"
             *ngIf="isLoggedin()&& isAdmin()&& getRoute()">
-                <i class="fa fa-lock"></i>
+                <mat-icon color="primary">SupervisorAccount</mat-icon>
             </a>
             <a mat-button *ngIf="isLoggedin()&&!isAdmin()">
-                <span class="fa fa-bell"></span>
+                <span><mat-icon  color="primary">notifications</mat-icon> </span>
             </a>
 </mat-toolbar>

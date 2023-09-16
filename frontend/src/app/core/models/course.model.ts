@@ -3,7 +3,6 @@ export default interface ICourse {
     name:string;
     author:string;
     duration :number;
-    price :number;
     image :string;
     rating : number;
     description :string;
