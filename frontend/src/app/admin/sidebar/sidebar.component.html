@@ -1,0 +1,27 @@
+<div class="container">
+ <mat-sidenav-container  >
+    <mat-sidenav mode="side" opened> 
+        <mat-nav-list role="navigation">
+            <mat-list-item>
+                <a  [routerLink]="['users-list']">
+                    <mat-icon>person</mat-icon>Users-List
+                </a>
+            </mat-list-item>
+            <mat-list-item>
+                <a [routerLink]="['courses-list']">
+                    <mat-icon>list
+                    </mat-icon>Course-List
+                </a>
+            </mat-list-item>
+            <mat-list-item >
+                <a [routerLink]="['professors-list']">
+                    <mat-icon>person</mat-icon>Professors
+                </a>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
