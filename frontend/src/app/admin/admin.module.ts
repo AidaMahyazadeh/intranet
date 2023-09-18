@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatTableModule} from '@angular/material/table';
 
 import { AdminComponent } from './admin.component';
 import { UserlistComponent } from './userlist/userlist.component';
@@ -47,7 +48,8 @@ import { ModifyDetailProfessorComponent } from './modify-detail-professor/modify
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule
   ]
 })
 export class AdminModule { }

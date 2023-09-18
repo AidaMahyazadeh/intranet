@@ -3,20 +3,20 @@
     <mat-sidenav mode="side" opened> 
         <mat-nav-list role="navigation">
             <mat-list-item>
-                <a  [routerLink]="['users-list']">
+                <li [routerLink]="['users-list']">
                     <mat-icon>person</mat-icon>Users-List
-                </a>
+                </li>
             </mat-list-item>
             <mat-list-item>
-                <a [routerLink]="['courses-list']">
+                <li [routerLink]="['courses-list']">
                     <mat-icon>list
                     </mat-icon>Course-List
-                </a>
+                </li>
             </mat-list-item>
-            <mat-list-item >
-                <a [routerLink]="['professors-list']">
+            <mat-list-item routerLink="professors-list">
+                <li>
                     <mat-icon>person</mat-icon>Professors
-                </a>
+                </li>
             </mat-list-item>
         </mat-nav-list>
     </mat-sidenav>

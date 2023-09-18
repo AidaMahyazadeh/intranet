@@ -1,6 +1,6 @@
 <app-sidebar></app-sidebar>
-<div *ngIf="getRoute()">
-    <router-outlet></router-outlet>
+<div >
+    <router-outlet *ngIf="getRoute()"></router-outlet>
 </div>
 <div  class="container">
   <h1  *ngIf="!getRoute()">welcome to admin page!</h1>

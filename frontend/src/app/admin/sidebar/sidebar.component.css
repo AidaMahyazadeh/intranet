@@ -45,3 +45,8 @@ mat-sidenav-container{
      text-align: center;
      /* min-height: 600px; */
   }
+
+  a{
+    text-decoration: none;
+    color: beige;
+  }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { AuthStorageService } from 'src/app/core/services/auth/auth-storage.service';
 
 @Component({
@@ -8,9 +9,11 @@ import { AuthStorageService } from 'src/app/core/services/auth/auth-storage.serv
 })
 export class SidebarComponent implements OnInit {
   adminName:string ='';
-  constructor(private authStorageService : AuthStorageService){}
+  constructor(private authStorageService : AuthStorageService
+    ){}
 
   ngOnInit(): void {
     this.adminName= this.authStorageService.getUserName()
   }
+  
 }
