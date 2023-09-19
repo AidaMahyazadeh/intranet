@@ -12,13 +12,12 @@ import { CoursesService } from 'src/app/core/services/courses.service';
   templateUrl: './course-details.component.html',
   styleUrls: ['./course-details.component.css']
 })
-export class CourseDetailsComponent implements OnInit, OnDestroy {
-  subscription !:Subscription;
+export class CourseDetailsComponent implements OnInit {
   selectedCourse !:ICourse;
   id !:number;
   enrolledIn = false;
+  
   constructor(
-    private courseService:CoursesService,
     private activatedRoute :ActivatedRoute,
     private router :Router,
     private authStorageService:AuthStorageService,
@@ -55,7 +54,5 @@ export class CourseDetailsComponent implements OnInit, OnDestroy {
       this.router.navigate(['courses'])
      }
 
-     ngOnDestroy(): void {
-      // this.subscription.unsubscribe()
-    }
+   
 }
