@@ -24,7 +24,7 @@ export class AdminAuthStorageService {
 
   storeAllUsers(user :IUser){ 
   this.usersList.push(user)
-  this.storeUserslist()
+   localStorage.setItem('usersList',JSON.stringify(this.usersList))
   }
 
   getUserByUsername(username:string){
@@ -34,8 +34,7 @@ export class AdminAuthStorageService {
         user=>user.username===username)!
     
     }
-
-   updateExistedUsers(username: string,enrolledCourse :ICourse[]){
+  updateExistedUsers(username: string,enrolledCourse :ICourse[]){
     let selectedUser=this.getUserByUsername(username)
     if(this.usersList[selectedUser].enrolledCourse.length>0){
       this.usersList[selectedUser].enrolledCourse.push(...enrolledCourse)
@@ -45,6 +44,9 @@ export class AdminAuthStorageService {
       this.storeUserslist()
     }
   }
+
+  
+ 
     
      getAllUsers(){
       return JSON.parse(localStorage.getItem('usersList')!) 
