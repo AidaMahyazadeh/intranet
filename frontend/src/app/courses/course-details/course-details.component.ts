@@ -40,7 +40,8 @@ export class CourseDetailsComponent implements OnInit {
     }
     
    existedEnrolledCourse(courseId:number){
-   this.enrolledIn= this.authStorageService.existedEnrolledCourse(courseId) ? true : false;
+    let userDetail = this.authStorageService.getAllUserDetail()
+   this.enrolledIn= this.adminAuthStoragrService.existedCourse(userDetail.username,courseId)?true:false
    } 
 
     enrollInTheCourse(course:ICourse){

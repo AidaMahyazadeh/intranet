@@ -45,7 +45,10 @@ export class AdminAuthStorageService {
     }
   }
 
-  
+  existedCourse(username:string,courseId:number):boolean{
+    let selectedUser=this.getUserByUsername(username)
+   return (this.usersList[selectedUser].enrolledCourse.findIndex(course=>course.id==courseId)>-1)!
+  }
  
     
      getAllUsers(){
