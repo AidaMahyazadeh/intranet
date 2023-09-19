@@ -6,13 +6,15 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { CoursesComponent } from './courses.component';
 import { SearchComponent } from './search/search.component';
+import { CourseDetailsComponent } from './course-details/course-details.component';
 
 
 
 @NgModule({
   declarations: [
     CoursesComponent,
-    SearchComponent
+    SearchComponent,
+    CourseDetailsComponent
   ],
   imports: [
     CommonModule,
