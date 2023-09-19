@@ -1,11 +1,12 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Component,  OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ActivatedRoute, Router } from '@angular/router';
+
 import ICourse from 'src/app/core/models/course.model';
 import { AdminAuthStorageService } from 'src/app/core/services/admin/admin-auth-storage.service';
-import { UsersListService } from 'src/app/core/services/admin/users-list.service';
 import { AuthStorageService } from 'src/app/core/services/auth/auth-storage.service';
-import { CoursesService } from 'src/app/core/services/courses.service';
+import { ConfirmEnrollmentDialogComponent } from '../confirm-enrollment-dialog/confirm-enrollment-dialog.component';
+
 
 @Component({
   selector: 'app-course-details',
@@ -16,12 +17,14 @@ export class CourseDetailsComponent implements OnInit {
   selectedCourse !:ICourse;
   id !:number;
   enrolledIn = false;
+  panelOpenState =false;
   
   constructor(
     private activatedRoute :ActivatedRoute,
     private router :Router,
     private authStorageService:AuthStorageService,
-    private adminAuthStoragrService :AdminAuthStorageService
+    private adminAuthStoragrService :AdminAuthStorageService,
+    private dialog :MatDialog
     ){}
 
 
@@ -49,6 +52,15 @@ export class CourseDetailsComponent implements OnInit {
       let userDetail = this.authStorageService.getAllUserDetail()
       this.adminAuthStoragrService.updateExistedUsers(userDetail.username,[course])
       this.enrolledIn=true
+    }
+
+    openDialog(course :ICourse){
+      return this.dialog.open(ConfirmEnrollmentDialogComponent,{disableClose :true}).afterClosed().subscribe(res=>{
+         console.log(res)
+        if (res){
+          this.enrollInTheCourse(course)
+        }
+      })
     }
 
     backToAllCourses(){
