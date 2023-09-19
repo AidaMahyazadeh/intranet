@@ -4,6 +4,8 @@ import { CoursesRoutingModule } from './courses-routing.module';
 import { FormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 import { CoursesComponent } from './courses.component';
 import { SearchComponent } from './search/search.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
@@ -21,7 +23,8 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
     CoursesRoutingModule,
     FormsModule,
     MatCardModule,
-    MatButtonModule
+    MatButtonModule,
+    MatExpansionModule
   ]
 })
 export class CoursesModule { }
