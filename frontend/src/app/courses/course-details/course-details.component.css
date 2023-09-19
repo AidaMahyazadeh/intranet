@@ -1,0 +1,52 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+mat-card{
+     margin: 50px auto;
+     width: 400px;
+     display: inline-block;
+     vertical-align: middle;  
+     border: 1px solid black;
+}
+
+
+img{
+    width: 400px;
+    height: 250px;
+}
+
+.btn-back{
+    background-color: rgba(18, 99, 198, 0.826);
+    margin-top: 40px;
+    margin-left: 30px;
+    color: beige;
+}
+
+.btn-enroll{
+    border: none;
+    border-radius: 5px;
+    color: beige;
+    margin-left: 150px;
+    background-color: green;
+}
+
+.btn-enrollin{
+    border: none;
+    border-radius: 5px;
+    color: beige;
+    margin-left: 150px;
+    background-color: rgb(105, 201, 105);
+}
+
+mat-card-title,
+mat-card-subtitle
+{
+  text-align: center;
+}
+
+mat-card-action{
+    border: none;
+}

@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, find, map } from 'rxjs';
 import ICourse from '../models/course.model';
 
 @Injectable({
@@ -23,9 +23,9 @@ export class CoursesService {
    this.courseSubject$.next(this.courses)
   }
 
-  getCourseById(id:number):Observable<ICourse[]>{
-   return this.getAllCourses().pipe(
-     map(courses =>courses.filter(course=>course.id==id) )
-    )
-  }
+  getCourseById(id:number):Observable<ICourse>{
+  return this.getAllCourses().pipe(
+     map(courses =>courses.find(course=>course.id==id)!)
+  )
+ }
 }

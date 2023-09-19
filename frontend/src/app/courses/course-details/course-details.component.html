@@ -1,0 +1,24 @@
+<button mat-raised-button class="btn btn-back"
+(click)="backToAllCourses()"
+>Back</button>
+<div class="container">
+    <ng-container *ngIf="selectedCourse" >
+        <mat-card >
+            <img mat-card-image [src]="selectedCourse.image" alt="">
+            <mat-card-title>
+                {{selectedCourse.name}}
+            </mat-card-title>
+            <mat-card-subtitle>
+                {{selectedCourse.author}}
+            </mat-card-subtitle>
+            <mat-card-content>
+                {{selectedCourse.description}}  
+            </mat-card-content>
+            <mat-card-actions>
+                <button *ngIf="!enrolledIn" mat-raised-button class="btn-enroll"(click)="enrollInTheCourse(selectedCourse)">Enroll</button>
+                <button  *ngIf="enrolledIn" mat-raised-button [disabled]="enrolledIn" class="btn-enrollin">EnrolledIn</button> 
+            </mat-card-actions>
+        </mat-card>
+    </ng-container>
+</div>
+    
