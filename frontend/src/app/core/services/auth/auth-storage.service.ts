@@ -93,8 +93,10 @@ export class AuthStorageService {
   }
 
   existedEnrolledCourse(courseId:number):boolean{
-    return( this.enrolledCourses.findIndex(item=>item.id==courseId)>-1)
+    return this.enrolledCourses.findIndex(item=>item.id==courseId)>-1
   }
+
+ 
 
   removeEnrolledCourse(){
     localStorage.removeItem('enrolledCourse')
