@@ -82,9 +82,9 @@ export class AuthStorageService {
     localStorage.setItem('enrolledCourse',JSON.stringify(this.enrolledCourses))
   }
 
-  storeEnrolledCourse(course:ICourse[]){
+  storeEnrolledCourse(course:ICourse){
     // this.enrolledCourses = this.getEnrolledCourse();
-    this.enrolledCourses.push(...course)
+    this.enrolledCourses.push(course)
     this.storeEnrolled()
   }
 
@@ -92,8 +92,8 @@ export class AuthStorageService {
    return JSON.parse(localStorage.getItem('enrolledCourse')!)
   }
 
-  existedEnrolledCourse(course:ICourse):boolean{
-    return( this.enrolledCourses.findIndex(item=>item.id==course.id)>-1)
+  existedEnrolledCourse(courseId:number):boolean{
+    return( this.enrolledCourses.findIndex(item=>item.id==courseId)>-1)
   }
 
   removeEnrolledCourse(){
