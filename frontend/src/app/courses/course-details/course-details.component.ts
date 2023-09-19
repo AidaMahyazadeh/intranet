@@ -45,13 +45,10 @@ export class CourseDetailsComponent implements OnInit, OnDestroy {
    } 
 
     enrollInTheCourse(course:ICourse){
-      if((this.authStorageService.existedEnrolledCourse(course.id))){
-        this.enrolledIn = true
-        this.authStorageService.storeEnrolledCourse(course)
-        let userDetail=this.authStorageService.getAllUserDetail()
-        this.adminAuthStoragrService.updateExistedUsers(userDetail.username,userDetail.enrolledCourse) 
-      }
-      this.enrolledIn = true
+      this.authStorageService.storeEnrolledCourse(course)
+      let userDetail = this.authStorageService.getAllUserDetail()
+      this.adminAuthStoragrService.updateExistedUsers(userDetail.username,[course])
+      this.enrolledIn=true
     }
 
     backToAllCourses(){
