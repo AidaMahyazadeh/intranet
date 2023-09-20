@@ -53,3 +53,21 @@ mat-card-subtitle
 mat-card-action{
     border: none;
 }
+
+mat-mdc-form-field + .mat-mdc-form-field {
+    margin-left: 8px;
+  }
+
+.btn-play-video{
+    border: none;
+}  
+
+.mat-expansion{
+    width: 40%;
+    margin-left: 450px;
+    border: 1px solid grey;
+}
+
+::ng-deep .mat-expansion-panel-body {
+    text-align: center;
+  }
