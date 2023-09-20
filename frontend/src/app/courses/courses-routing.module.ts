@@ -6,6 +6,7 @@ import { courseDetailsResolver } from "./course-details/resolver/course-details.
 
 
 
+
 const routes :Routes =[
     {path:'',component :CoursesComponent},
     {path :':courseName/:id',component :CourseDetailsComponent,resolve :{courseDetails :courseDetailsResolver}}
