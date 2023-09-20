@@ -12,6 +12,7 @@ import { SearchComponent } from './search/search.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { ConfirmEnrollmentDialogComponent } from './confirm-enrollment-dialog/confirm-enrollment-dialog.component';
 import { MatIconModule } from '@angular/material/icon';
+import { LessonsComponent } from './lessons/lessons.component';
 
 
 
@@ -20,7 +21,8 @@ import { MatIconModule } from '@angular/material/icon';
     CoursesComponent,
     SearchComponent,
     CourseDetailsComponent,
-    ConfirmEnrollmentDialogComponent
+    ConfirmEnrollmentDialogComponent,
+    LessonsComponent
   ],
   imports: [
     CommonModule,
