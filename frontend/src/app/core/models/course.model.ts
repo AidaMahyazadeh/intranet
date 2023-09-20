@@ -1,9 +1,11 @@
+import ILesson from "./lesson.model";
+
 export default interface ICourse {
     id :number;
     name:string;
     author:string;
-    duration :number;
+    duration :string;
     image :string;
-    rating : number;
     description :string;
+    lessons :ILesson[]
 }
