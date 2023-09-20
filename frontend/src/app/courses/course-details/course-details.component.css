@@ -34,11 +34,14 @@ img{
 }
 
 .btn-enrollin{
-    border: none;
-    border-radius: 5px;
+ margin-left: 160px;
+ border: none;
+}
+
+mat-icon{
+    background-color: red;
     color: beige;
-    margin-left: 150px;
-    background-color: rgb(105, 201, 105);
+    border-radius: 60%;
 }
 
 mat-card-title,
