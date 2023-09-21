@@ -1,4 +1,4 @@
-import { Component,  OnInit } from '@angular/core';
+import { Component,  ElementRef,  OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -6,6 +6,7 @@ import ICourse from 'src/app/core/models/course.model';
 import { AdminAuthStorageService } from 'src/app/core/services/admin/admin-auth-storage.service';
 import { AuthStorageService } from 'src/app/core/services/auth/auth-storage.service';
 import { ConfirmEnrollmentDialogComponent } from '../confirm-enrollment-dialog/confirm-enrollment-dialog.component';
+
 
 
 @Component({
@@ -18,6 +19,9 @@ export class CourseDetailsComponent implements OnInit {
   id !:number;
   enrolledIn = false;
   panelOpenState =false;
+  isShownContent =false;
+  isShownVideo = false;
+  
   
   constructor(
     private activatedRoute :ActivatedRoute,
@@ -63,9 +67,17 @@ export class CourseDetailsComponent implements OnInit {
       })
     }
 
+   showContent(){
+    return this.isShownContent=!this.isShownContent
+   }
+
     backToAllCourses(){
       this.router.navigate(['courses'])
      }
+
+    playVideo(){
+      this.isShownVideo=!this.isShownVideo; 
+    }
 
    
 }
