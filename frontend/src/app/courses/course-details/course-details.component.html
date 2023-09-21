@@ -2,7 +2,7 @@
 (click)="backToAllCourses()"
 >Back</button>
 <div class="container">
-    <ng-container *ngIf="selectedCourse" >
+    <ng-container >
         <mat-card >
             <img mat-card-image [src]="selectedCourse.image" alt="">
             <mat-card-title>
@@ -16,38 +16,43 @@
             </mat-card-content>
             <mat-card-actions>
                 <button *ngIf="!enrolledIn" mat-raised-button (click)="openDialog(selectedCourse)"class="btn-enroll" >Enroll</button>
-                <button  *ngIf="enrolledIn"  class="btn-enrollin">
-                  <mat-icon >play_arrow</mat-icon>
+                <button  *ngIf="enrolledIn" (click)="showContent()"
+                class="btn-enrollin" >
+                  <mat-icon  >play_arrow</mat-icon>
                 </button> 
             </mat-card-actions>
         </mat-card>
     </ng-container>
 </div>
- <!-- <ng-container *ngIf="enrolledIn">
-    <mat-accordion>
-        <mat-expansion-panel hideToggle>
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Section 1: Getting Started
-            </mat-panel-title>
-            <mat-panel-description>
-              This is a summary of the content
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <p>This is the primary content of the panel.</p>
-        </mat-expansion-panel>
-        <mat-expansion-panel (opened)="panelOpenState = true"
-                             (closed)="panelOpenState = false">
-          <mat-expansion-panel-header>
-            <mat-panel-title>
-              Self aware panel
-            </mat-panel-title>
-            <mat-panel-description>
-              Currently I am {{panelOpenState ? 'open' : 'closed'}}
-            </mat-panel-description>
-          </mat-expansion-panel-header>
-          <p>I'm visible because I am open</p>
-        </mat-expansion-panel>
-      </mat-accordion>
-      
- </ng-container>    -->
+<ng-container *ngIf="isShownContent">
+  <mat-accordion *ngFor="let lesson of selectedCourse.lessons; let i =index" >
+    <mat-expansion-panel class="mat-expansion">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Section {{i+1}}:{{lesson.section |titlecase}}
+        </mat-panel-title>
+        <mat-panel-description>  
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <ng-container *ngFor="let part of lesson.parts">
+        <p>{{part.title |titlecase}}</p>
+        <button class="btn-play-video" (click)="playVideo()" >
+          <mat-icon>video_library</mat-icon>
+        </button> 
+        <ng-container *ngIf="isShownVideo">
+          <div class="embed-responsive">
+            <iframe #youtubePlayer  class="embed-responsive-item"
+            [src]="part.source | safe" 
+            frameborder="0"
+            allowfullscreen width="560" height="315" 
+           autoplay
+            ></iframe>
+          </div>
+        </ng-container>  
+      </ng-container>
+    </mat-expansion-panel>
+  </mat-accordion>
+</ng-container>
+
+
+ 
