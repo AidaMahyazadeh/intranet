@@ -61,23 +61,7 @@ export class AuthStorageService {
     this.storeCartItem(this.courses)
   }
 
-  removeCartItem(){
-    localStorage.removeItem('cartItem')
-  }
 
-  storeCartTotal(total :number){
-    localStorage.setItem('cartTotal',JSON.stringify(total.toFixed(2)))
-  }
-
-  getCartTotal(){
-    return JSON.parse(localStorage.getItem('cartTotal')!)
-  }
-
-  removeCartTotal(){
-    localStorage.removeItem('cartTotal')
-  }
-
- 
   storeEnrolled(){
     localStorage.setItem('enrolledCourse',JSON.stringify(this.enrolledCourses))
   }
@@ -115,6 +99,20 @@ export class AuthStorageService {
      return user
   }
 
-  
+   // removeCartItem(){
+  //   localStorage.removeItem('cartItem')
+  // }
+
+  // storeCartTotal(total :number){
+  //   localStorage.setItem('cartTotal',JSON.stringify(total.toFixed(2)))
+  // }
+
+  // getCartTotal(){
+  //   return JSON.parse(localStorage.getItem('cartTotal')!)
+  // }
+
+  // removeCartTotal(){
+  //   localStorage.removeItem('cartTotal')
+  // }
 
 }
