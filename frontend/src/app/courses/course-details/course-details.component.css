@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    height: auto;
 }
 
 mat-card{
@@ -58,7 +59,9 @@ mat-mdc-form-field + .mat-mdc-form-field {
     margin-left: 8px;
   }
 
-.btn-play-video{
+.btn-play-video,
+.btn-pdf
+{
     border: none;
 }  
 
