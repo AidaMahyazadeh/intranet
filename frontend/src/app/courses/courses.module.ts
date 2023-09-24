@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CoursesRoutingModule } from './courses-routing.module';
 import { FormsModule } from '@angular/forms';
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
@@ -35,7 +36,8 @@ import { SafePipe } from './safe.pipe';
     MatButtonModule,
     MatExpansionModule,
     MatDialogModule,
-    MatIconModule
+    MatIconModule,
+    PdfViewerModule
   ]
 })
 export class CoursesModule { }
