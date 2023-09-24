@@ -1,9 +1,7 @@
-interface Part{
-    title :string,
-    source :string
-}
+import IPart from "./part.model";
+
 
 export default interface ILesson{
     section :string;
-    parts :Part[]
+    parts :IPart[];
 }
