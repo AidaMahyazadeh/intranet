@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import ICourse from 'src/app/core/models/course.model';
 import { CoursesListService } from 'src/app/core/services/admin/courses-list.service';
-import { ModifyCoursesComponent } from '../modify-courses/modify-courses.component';
+import { ModifyCoursesComponent } from './modify-courses/modify-courses.component';
 
 
 @Component({

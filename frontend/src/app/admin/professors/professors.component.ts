@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { IProfessor } from 'src/app/core/models/professor.model';
 import { ProfessorService } from 'src/app/core/services/admin/professor.service';
-import { NewProfessorComponent } from '../new-professor/new-professor.component';
-import { ModifyDetailProfessorComponent } from '../modify-detail-professor/modify-detail-professor.component';
+import { NewProfessorComponent } from './new-professor/new-professor.component';
+import { ModifyDetailProfessorComponent } from './modify-detail-professor/modify-detail-professor.component';
 
 
 @Component({
