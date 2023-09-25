@@ -18,10 +18,11 @@ import { CourselistComponent } from './courselist/courselist.component';
 import { ProfessorsComponent } from './professors/professors.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { MatCardModule } from '@angular/material/card';
-import { NewProfessorComponent } from './new-professor/new-professor.component';
-import { ModifyDetailProfessorComponent } from './modify-detail-professor/modify-detail-professor.component';
+import { NewProfessorComponent } from './professors/new-professor/new-professor.component';
+import { ModifyDetailProfessorComponent } from './professors/modify-detail-professor/modify-detail-professor.component';
 
-import { ModifyCoursesComponent } from './modify-courses/modify-courses.component';
+import { ModifyCoursesComponent } from './courselist/modify-courses/modify-courses.component';
+import { NewCourseComponent } from './courselist/new-course/new-course.component';
 
 
 
@@ -37,7 +38,8 @@ import { ModifyCoursesComponent } from './modify-courses/modify-courses.componen
     SidebarComponent,
     NewProfessorComponent,
     ModifyDetailProfessorComponent,
-    ModifyCoursesComponent
+    ModifyCoursesComponent,
+    NewCourseComponent
    
   ],
   imports: [
