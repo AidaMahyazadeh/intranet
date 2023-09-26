@@ -8,4 +8,5 @@ export default interface ICourse {
     image :string;
     description :string;
     lessons :ILesson[]
+    students ?: number;
 }
