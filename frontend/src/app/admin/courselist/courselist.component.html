@@ -60,6 +60,10 @@
      </div>
      <mat-card-content>
       <div class="text">
+        <b class="title">Course Id :</b>
+        <b class="detail">{{course.id}}</b>
+      </div>
+      <div class="text">
         <b class="title">Course Name :</b>
         <b class="detail">{{course.name}}</b>
       </div>
@@ -74,6 +78,10 @@
       <div class="text">
         <b class="title">Description :</b>
         <b class="detail">{{course.description.slice(0,30)}}...</b>
+      </div>
+      <div class="text">
+        <b class="title">Number of Students :</b>
+        <b class="detail">{{getNumberOfStudents(course.id)}}</b>
       </div>
       <div class="text">
         <b class="title">Lessons :</b>

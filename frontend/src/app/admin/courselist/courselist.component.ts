@@ -3,6 +3,8 @@ import { MatDialog } from '@angular/material/dialog';
 import ICourse from 'src/app/core/models/course.model';
 import { CoursesListService } from 'src/app/core/services/admin/courses-list.service';
 import { ModifyCoursesComponent } from './modify-courses/modify-courses.component';
+import { NewCourseComponent } from './new-course/new-course.component';
+import { AdminAuthStorageService } from 'src/app/core/services/admin/admin-auth-storage.service';
 
 
 @Component({
@@ -14,17 +16,27 @@ export class CourselistComponent implements OnInit{
   // displayedColumns=['id','name', 'author','image','description','duration','delete']
   courses !:ICourse[];
   selectedCourse !:ICourse;
+  newAddedCourse !:ICourse;
+  numberOfStudents !:number;
 
   constructor(
     private coursesListService:CoursesListService,
+    private adminAuthStorage :AdminAuthStorageService,
     private dialog :MatDialog
     ){}
   
   ngOnInit() {
     this.coursesListService.getAllCourses().subscribe(
-      res=>this.courses=res
+      res=> this.courses=res
     )
   }
+
+  getNumberOfStudents(courseId:number){
+
+     this.numberOfStudents=  this.adminAuthStorage.getTotalStudents(courseId)
+     console.log(this.numberOfStudents)
+     return this.numberOfStudents
+    }
 
   getCourseById(courseId:number){
    return this.selectedCourse=this.courses.find(course=>course.id==courseId)!
@@ -35,7 +47,13 @@ export class CourselistComponent implements OnInit{
   }
 
   openDialog(){
-  //  const dialogRef= this.dialog.open()
+   const dialogRef= this.dialog.open(NewCourseComponent)
+   dialogRef.componentInstance.newCourse=this.newAddedCourse;
+   dialogRef.componentInstance.newAddedCourse.subscribe(
+    (res:ICourse)=>{
+      this.courses.push(res)
+    }
+   )
   }
 
   openModify(id:number){
