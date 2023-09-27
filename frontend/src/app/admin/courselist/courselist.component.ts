@@ -17,7 +17,6 @@ export class CourselistComponent implements OnInit{
   courses !:ICourse[];
   selectedCourse !:ICourse;
   newAddedCourse !:ICourse;
-  numberOfStudents !:number;
 
   constructor(
     private coursesListService:CoursesListService,
@@ -32,10 +31,7 @@ export class CourselistComponent implements OnInit{
   }
 
   getNumberOfStudents(courseId:number){
-
-     this.numberOfStudents=  this.adminAuthStorage.getTotalStudents(courseId)
-     console.log(this.numberOfStudents)
-     return this.numberOfStudents
+     return this.adminAuthStorage.getTotalStudents(courseId)
     }
 
   getCourseById(courseId:number){
