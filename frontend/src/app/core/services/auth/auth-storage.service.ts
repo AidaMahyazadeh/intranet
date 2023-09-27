@@ -99,20 +99,20 @@ export class AuthStorageService {
      return user
   }
 
-   // removeCartItem(){
-  //   localStorage.removeItem('cartItem')
-  // }
+   removeCartItem(){
+    localStorage.removeItem('cartItem')
+  }
 
-  // storeCartTotal(total :number){
-  //   localStorage.setItem('cartTotal',JSON.stringify(total.toFixed(2)))
-  // }
+  storeCartTotal(total :number){
+    localStorage.setItem('cartTotal',JSON.stringify(total.toFixed(2)))
+  }
 
-  // getCartTotal(){
-  //   return JSON.parse(localStorage.getItem('cartTotal')!)
-  // }
+  getCartTotal(){
+    return JSON.parse(localStorage.getItem('cartTotal')!)
+  }
 
-  // removeCartTotal(){
-  //   localStorage.removeItem('cartTotal')
-  // }
+  removeCartTotal(){
+    localStorage.removeItem('cartTotal')
+  }
 
 }
