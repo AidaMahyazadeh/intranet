@@ -40,7 +40,6 @@ export class NewCourseComponent implements OnInit {
   }
 
   getParts(index:number){
-  
   return (this.lessons.at(index).get('parts')as FormArray).controls
   }
 
