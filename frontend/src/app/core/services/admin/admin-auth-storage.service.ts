@@ -14,7 +14,9 @@ export class AdminAuthStorageService {
   
  usersList :IUser[] =[]; 
  enrolledCourse :ICourse[]=[];
-
+ studentsList :IUser[] =[];
+ totalStudents !:number;
+ 
  
   constructor(private authStorageService :AuthStorageService){}
 
@@ -51,14 +53,15 @@ export class AdminAuthStorageService {
   }
  
     
-     getAllUsers(){
-      return JSON.parse(localStorage.getItem('usersList')!) 
+  getAllUsers(){
+    return JSON.parse(localStorage.getItem('usersList')!) 
      }
 
-     
+   getTotalStudents(courseId:number){ 
+   this.usersList = this.getAllUsers()
+   return this.usersList.flatMap(user=>user.enrolledCourse.filter(course=>course.id==courseId)).length
+    }
 }
-
- 
     
 
 
