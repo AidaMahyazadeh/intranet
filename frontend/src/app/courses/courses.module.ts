@@ -9,12 +9,15 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatDialogModule} from '@angular/material/dialog';
 import { MatIconModule } from '@angular/material/icon';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatSelectModule} from '@angular/material/select';
 
 import { CoursesComponent } from './courses.component';
 import { SearchComponent } from './search/search.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import { ConfirmEnrollmentDialogComponent } from './confirm-enrollment-dialog/confirm-enrollment-dialog.component';
 import { SafePipe } from './safe.pipe';
+
 
 
 
@@ -37,7 +40,9 @@ import { SafePipe } from './safe.pipe';
     MatExpansionModule,
     MatDialogModule,
     MatIconModule,
-    PdfViewerModule
+    PdfViewerModule,
+    MatFormFieldModule,
+    MatSelectModule
   ]
 })
 export class CoursesModule { }
