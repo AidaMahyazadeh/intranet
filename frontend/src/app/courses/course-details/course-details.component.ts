@@ -21,6 +21,10 @@ export class CourseDetailsComponent implements OnInit {
   panelOpenState =false;
   isShownContent =false;
   isShownVideo = false;
+  isShownPdf =false;
+  pageVariable=0;
+  // pdfSrc='../../../../assets/pdf.pdf'
+  @ViewChild('sourcePdf') source !:ElementRef;
   
   
   constructor(
@@ -76,8 +80,21 @@ export class CourseDetailsComponent implements OnInit {
      }
 
     playVideo(){
-      this.isShownVideo=!this.isShownVideo; 
+      this.isShownVideo=!this.isShownVideo
     }
 
-   
+    showPdf(){
+      this.isShownPdf=!this.isShownPdf
+    }
+
+    downloadPdf(){
+      const link = document.createElement('a')
+      link.setAttribute('target', '_blank')
+      link.setAttribute('href', this.source.nativeElement.getAttribute('src'))
+      link.setAttribute('download', 'text.pdf')
+      document.body.appendChild(link)
+      link.click()
+      link.remove()
+    }
+
 }
