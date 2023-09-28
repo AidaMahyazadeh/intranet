@@ -58,7 +58,7 @@ export class AdminAuthStorageService {
      }
 
    getTotalStudents(courseId:number){ 
-   this.usersList = this.getAllUsers()
+    this.usersList = this.getAllUsers()
    return this.usersList.flatMap(user=>user.enrolledCourse.filter(course=>course.id==courseId)).length
     }
 }
