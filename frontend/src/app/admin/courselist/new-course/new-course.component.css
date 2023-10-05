@@ -1,3 +1,8 @@
+.container{
+    height: 100%;
+    width: 100%;
+}
+
 .header{
     text-align: center;
     color: blue;
@@ -30,3 +35,4 @@ label{
 .btn-add{
     background-color: rgb(156, 232, 156);
 }
+

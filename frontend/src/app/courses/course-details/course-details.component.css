@@ -73,15 +73,15 @@ mat-accordian{
  .mat-expansion{
     width: 50%;
     height: auto; 
-    margin-left: 450px;
+    top:50px;
+    margin-left: 700px;
     border: 1px solid grey;   
-   
-    justify-content: center;
-    
+    justify-content: center; 
 } 
 
 ::ng-deep .mat-expansion-panel-body {
     text-align: center;
+    height: 100px;
   }
 
   .embed-responsive {
@@ -99,8 +99,10 @@ mat-accordian{
     height: 100%;
   }
 
-/* .outer-panel{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+
+.containerAfterEnroll{
+    position: absolute;
+    top: 150px;
+    left: 150px;
+}
+
