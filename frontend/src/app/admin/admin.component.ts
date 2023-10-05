@@ -19,7 +19,6 @@ export class AdminComponent implements OnInit {
   
      ngOnInit(){
       this.adminName = (this.authStorageService.getUserName()!)
-      
      }
   
      getRoute(){
