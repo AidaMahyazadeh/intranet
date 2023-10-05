@@ -3,18 +3,18 @@
     <mat-sidenav mode="side" opened> 
         <mat-nav-list role="navigation">
             <mat-list-item>
-                <li [routerLink]="['users-list']">
+                <li (click)="goToUserList()">
                     <mat-icon>person</mat-icon>Users-List
                 </li>
             </mat-list-item>
             <mat-list-item>
-                <li [routerLink]="['courses-list']">
+                <li (click)=" goToCourseList()">
                     <mat-icon>list
                     </mat-icon>Course-List
                 </li>
             </mat-list-item>
-              <mat-list-item routerLink="professors-list">
-                <li>
+              <mat-list-item >
+                <li (click)="goToProfessorList()">
                     <mat-icon>person</mat-icon>Professors
                 </li>
             </mat-list-item>
