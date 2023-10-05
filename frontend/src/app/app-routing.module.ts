@@ -8,7 +8,8 @@ const routes: Routes = [
   {path :'admin',canActivate :[adminAuthGuard] ,loadChildren:()=>import('./admin/admin.module').then(module=>module.AdminModule)},
   {
     path :'courses',loadChildren :()=>import('./courses/courses.module').then(module=>module.CoursesModule)
-  }
+  },
+  { path : 'professor',loadChildren :()=>import('./professor/professor.module').then(module=>module.ProfessorModule)}
 ];
 
 @NgModule({
