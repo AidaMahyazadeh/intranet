@@ -49,7 +49,14 @@ if(this.loginForm.valid){
        this.authStorageService.storeToken(res.token) 
        this.authStorageService.storeRole(res.user.role)
        this.authStorageService.storeUserName(res.user.username)
-       res.user.role==='admin'?this.router.navigate(['admin']):this.router.navigate(['home'])
+      //  res.user.role==='admin'?this.router.navigate(['admin']):this.router.navigate(['home'])
+       switch(res.user.role){
+        case 'admin': this.router.navigate(['admin']);
+        break;
+        case 'student' :this.router.navigate(['home']);
+        break;
+        case 'professor' :this.router.navigate(['professor'])
+       }
        this.toast.success(`Welcome back, ${this.loginForm.controls['username'].value}!`)
       },
     error:
