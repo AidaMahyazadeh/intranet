@@ -55,7 +55,7 @@ export class CourselistComponent implements OnInit{
   openModify(id:number){
     this.getCourseById(id)
     const dialogRef= this.dialog.open(ModifyCoursesComponent,{
-      height:'100%'
+      height:'75%'
     })
     dialogRef.componentInstance.selectedCourse=this.selectedCourse
   }
