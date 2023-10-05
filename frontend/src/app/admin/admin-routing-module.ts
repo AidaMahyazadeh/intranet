@@ -7,6 +7,7 @@ import { CourselistComponent } from "./courselist/courselist.component";
 import { UserlistComponent } from "./userlist/userlist.component";
 
 const routes :Routes =[
+ 
     {path :'',component:AdminComponent,children:[
         {path :'users-list',component :UserlistComponent},
         {path :'courses-list',component :CourselistComponent},
