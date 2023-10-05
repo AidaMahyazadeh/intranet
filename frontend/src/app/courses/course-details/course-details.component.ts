@@ -25,6 +25,7 @@ export class CourseDetailsComponent implements OnInit {
   pageVariable=0;
   // pdfSrc='../../../../assets/pdf.pdf'
   @ViewChild('sourcePdf') source !:ElementRef;
+  @ViewChild('youtubePlayer') video!:ElementRef;
   
   
   constructor(
@@ -79,8 +80,13 @@ export class CourseDetailsComponent implements OnInit {
       this.router.navigate(['courses'])
      }
 
-    playVideo(){
-      this.isShownVideo=!this.isShownVideo
+    playVideo(id:number){
+      console.log(id,this.video.nativeElement.id)
+      if(!!this.video&&this.video.nativeElement.id==id){
+
+        this.isShownVideo=!this.isShownVideo
+      }
+      
     }
 
     showPdf(){
