@@ -21,15 +21,15 @@ export class SidebarComponent implements OnInit {
   }
   
   goToUserList(){
-    this.router.navigate(['users-list'],{relativeTo :this.activatedRoute})
+     this.router.navigate(['users-list'],{relativeTo :this.activatedRoute})
   }
 
   goToCourseList(){
-    this.router.navigate(['courses-list'],{relativeTo :this.activatedRoute})
+     this.router.navigate(['courses-list'],{relativeTo :this.activatedRoute})
   }
 
   goToProfessorList(){
-    this.router.navigate(['professors-list'],{relativeTo :this.activatedRoute})
+     this.router.navigate(['professors-list'],{relativeTo :this.activatedRoute})
   }
 
 }
