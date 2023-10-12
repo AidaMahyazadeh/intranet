@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { PagesRoutingModule } from './pages.routing.module';
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { MapComponent } from './map/map.component';
 
 
 
@@ -17,7 +19,8 @@ import { PagesRoutingModule } from './pages.routing.module';
   declarations: [
     SignupComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    MapComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +30,8 @@ import { PagesRoutingModule } from './pages.routing.module';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    LeafletModule
   ]
 })
 export class PagesModule { }
