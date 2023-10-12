@@ -21,8 +21,6 @@ import { SafePipe } from './safe.pipe';
 
 
 
-
-
 @NgModule({
   declarations: [
     CoursesComponent,
